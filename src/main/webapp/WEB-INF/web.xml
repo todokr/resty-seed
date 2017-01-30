@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <context-param>
+        <param-name>resty.swagger</param-name>
+        <param-value>enable</param-value>
+    </context-param>
+<!--
+    <context-param>
+        <param-name>resty.zipkin</param-name>
+        <param-value>enable</param-value>
+    </context-param>
+    <context-param>
+        <param-name>resty.zipkin.sample.rate</param-name>
+        <param-value>1.0</param-value>
+    </context-param>
+    <context-param>
+        <param-name>resty.zipkin.server.url</param-name>
+        <param-value>http://127.0.0.1:9411/api/v1/spans</param-value>
+    </context-param>
+-->
+<!--
+    <context-param>
+        <param-name>resty.hystrix</param-name>
+        <param-value>enable</param-value>
+    </context-param>
+-->
+<!--
+    <context-param>
+        <param-name>resty.logconsole</param-name>
+        <param-value>enable</param-value>
+    </context-param>
+    <context-param>
+        <param-name>resty.logconsole.dir</param-name>
+        <param-value>logs</param-value>
+    </context-param>
+    <context-param>
+        <param-name>resty.logconsole.file</param-name>
+        <param-value>application.log</param-value>
+    </context-param>
+-->
+<!--
+    <context-param>
+        <param-name>resty.wabjars</param-name>
+        <param-value>enable</param-value>
+    </context-param>
+    <context-param>
+        <param-name>resty.wabjars.path</param-name>
+        <param-value>/public/assets/*</param-value>
+    </context-param>
+-->
+</web-app>
