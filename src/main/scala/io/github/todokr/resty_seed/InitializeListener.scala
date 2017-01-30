@@ -25,19 +25,20 @@ class InitializeListener extends ServletContextListener {
     // SQL test (must be deleted on prod)
     implicit val session = AutoSession
     sql"""
-      create table testTable (
+      create table job (
         id serial not null primary key,
-        name varchar(64),
-        created_at timestamp not null
+        siteCode varchar(64),
+        crawlConfig varchar
       )
     """.execute.apply()
-    Seq("Alice", "Bob", "Chris") foreach { name =>
-      sql"insert into testTable (name, created_at) values (${name}, current_timestamp)".update.apply()
-    }
+    sql"""
+         insert into job (siteCode, crawlConfig)
+         values ('news-picks', '{"hoge": "fuga"}')
+       """.execute().apply()
     val entities: List[Map[String, Any]] = {
-      sql"select * from testTable".map(_.toMap).list.apply()
+      sql"select * from job".map(_.toMap).list.apply()
     }
-    logger.debug(entities.flatten.toString)
+    logger.info(entities.flatten.toString)
 
 
     // Register Application Controllers
