@@ -1,10 +1,10 @@
-package io.github.todokr.resty_seed
+package io.github.todokr.resty_seed.controller
 
 import com.github.takezoe.resty.Action
-import com.github.takezoe.resty.sample.Message
+import io.github.todokr.resty_seed.service.JobService
 import org.slf4j.LoggerFactory
 
-class JobController {
+class JobController extends JobService {
 
   private val logger = LoggerFactory.getLogger(classOf[JobController])
 
@@ -28,5 +28,3 @@ class JobController {
 
 }
 
-case class JobResponse(id: Int, siteCode: String, crawlConfig: String)
-case class ExecuteResponse(completed: Long, results: Seq[String])
